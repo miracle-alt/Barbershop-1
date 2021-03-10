@@ -1,4 +1,13 @@
-.body {
-  font-family: Open + Sans, sans-serif;
-  background-color: blue;
+body {
+  background: rgb(113, 113, 238);
+  font-family: 'Open Sans', sans-serif;
+}
+.title {
+  color: rgb(201, 25, 171);
+}
+button[type='button'] {
+  color: rgb(219, 20, 209);
+}
+button {
+  cursor: pointer;
 }
