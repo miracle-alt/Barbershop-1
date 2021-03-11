@@ -1,13 +1,23 @@
 body {
-  background: rgb(113, 113, 238);
+  background: rgb(118, 47, 250);
   font-family: 'Open Sans', sans-serif;
 }
 .title {
-  color: rgb(201, 25, 171);
+  color: rgb(98, 136, 98);
 }
 button[type='button'] {
-  color: rgb(219, 20, 209);
+  color: rgb(51, 43, 51);
 }
 button {
   cursor: pointer;
+  background-color: blue;
+}
+button:hover {
+  background-color: rgb(141, 14, 124);
+}
+button:focus {
+  background-color: crimson;
+}
+button:active {
+  background-color: green;
 }
