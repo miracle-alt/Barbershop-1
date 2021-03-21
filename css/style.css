@@ -1,3 +1,5 @@
+@font-face {
+}
 :root {
   --main-text-color: #555555;
   --dark-bg-text-color: #9ba4bd;
@@ -6,6 +8,15 @@
   --dark-bg-color: #191c26;
   --second-bg-color: #f7f7f7;
   --title-font: 'Raleway', sans-serif;
+  --grid-item: 2;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 body {
   background: rgb(178, 175, 184);
@@ -15,6 +26,21 @@ body {
   letter-spacing: 0.02em;
   color: var(--main-text-color);
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Отменить курсив */
 address {
   font-style: normal;
@@ -39,17 +65,62 @@ address {
 .link:focus {
   color: var(--accent-color);
 }
+.logo {
+  display: block;
+}
+
+.link.menu-link {
+}
 .list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style: none;
 }
+.list.menu {
+  display: inline-flex;
+}
+.menu-item:not(:last-child) {
+  margin-right: 40px;
+}
 .button {
+  border-radius: 25px;
+  border: 1px solid var(--accent-color);
+  padding: 12px 20px;
+  min-width: 160px;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--title-color);
+  cursor: pointer;
 }
+.button:hover,
+.button:focus {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+/* Выравнивание кол-то фото в секции(3шт., 4шт.) */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.grid-item {
+  flex-basis: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+.content-box {
+  flex-basis: calc((100% - 30px) / 2);
+}
+
 /* Копирайт внизу */
 .copyright {
   font-weight: 600;
@@ -60,17 +131,31 @@ address {
 }
 /* Стили к социальным сетям: инстаграм, ютуб */
 .socials-list {
+  display: flex;
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   color: var(--title-color);
 }
+.socials-item:not(:last-child) {
+  margin-right: 40px;
+}
+/* div контейнер */
+.container {
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /* Общие стили к заголовкам */
 .title {
   font-family: var(--title-font);
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--title-color);
+  margin-bottom: 20px;
 }
 /* Лейбл для заголовков */
 .title-label {
@@ -80,6 +165,7 @@ address {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--title-color);
+  margin-bottom: 20px;
 }
 /* h1 */
 .page-title {
@@ -91,16 +177,45 @@ address {
   font-size: 42px;
   line-height: 1.167;
 }
-
+.section {
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
 /* header */
 .header {
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: #fff;
 }
-
+.header .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header .logo {
+  margin-right: 70px;
+}
+.header .button {
+  margin-left: 40px;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+.hero-content {
+  /*width: calc(100% / 12 * 5); или */
+  max-width: 500px;
+}
 /* в 3 секции temnui fon */
 .dark-bg {
   background-color: var(--dark-bg-color);
@@ -113,9 +228,19 @@ address {
 .dark-bg .title-label {
   --title-color: rgb(157, 164, 189, 0.6);
 }
-
+.price-wrap {
+  display: flex;
+}
+.price-list {
+  flex-basis: 50%;
+  padding: 30px 40px;
+}
+.price-item {
+  display: flex;
+  justify-content: space-between;
+}
 /* в 4 секции */
-.benefits .benefits-list .benefits-item {
+.benefits-item {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -123,6 +248,7 @@ address {
   color: var(--title-color);
   background-color: var(--second-bg-color);
 }
+
 .benefits-number {
   font-weight: 700;
   font-size: 42px;
@@ -135,6 +261,7 @@ address {
   background-color: var(--second-bg-color);
 }
 .team-item {
+  --grid-item: 3;
   text-align: center;
 }
 /* h3 */
@@ -149,6 +276,9 @@ address {
   color: var(--accent-color);
 }
 
+.gallery-item {
+  --grid-item: 4;
+}
 /* в 6 секции */
 .title-label {
 }
