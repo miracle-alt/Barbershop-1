@@ -220,6 +220,7 @@ address {
 .dark-bg {
   background-color: var(--dark-bg-color);
   color: var(--dark-bg-text-color);
+  background-image: url();
 }
 .dark-bg .title,
 .dark-bg .button {
