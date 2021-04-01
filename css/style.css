@@ -120,7 +120,16 @@ address {
 .content-box {
   flex-basis: calc((100% - 30px) / 2);
 }
-
+/*--------------------------------------*/
+.line:before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: currentColor;
+  display: inline-block;
+  margin-right: 20px;
+}
+/*-------------------------------------------------*/
 /* Копирайт внизу */
 .copyright {
   font-weight: 600;
@@ -132,6 +141,7 @@ address {
 /* Стили к социальным сетям: инстаграм, ютуб */
 .socials-list {
   display: flex;
+  align-items: center;
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -140,6 +150,32 @@ address {
 .socials-item:not(:last-child) {
   margin-right: 40px;
 }
+/*----------------------------------------------------------------------*/
+.social-icon {
+  display: inline-flex;
+}
+.social-icon-item + .social-icon-item {
+  margin-left: 10px;
+}
+.social-icon-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.social-list .icon {
+  width: 20px;
+  height: 20px;
+  color: var(--title-color);
+}
+.social-icon-link:hover .icon,
+.social-icon-link:focus .icon {
+  color: var(--accent-color);
+}
+
 /* div контейнер */
 .container {
   width: 1200px;
@@ -163,6 +199,8 @@ address {
   font-size: 11px;
   line-height: 1.36;
   letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
   text-transform: uppercase;
   color: var(--title-color);
   margin-bottom: 20px;
@@ -212,9 +250,16 @@ address {
   align-items: center;
   min-height: 100vh;
 }
+.hero .container {
+  background-repeat: no-repeat;
+  background-position: 115px 0;
+  height: 100vh;
+  background-image: url(../images/slider-1.jpg);
+}
 .hero-content {
-  /*width: calc(100% / 12 * 5); или */
+  width: calc(100% / 12 * 5);
   max-width: 500px;
+  margin-left: 200px;
 }
 /* в 3 секции temnui fon */
 .dark-bg {
@@ -229,17 +274,51 @@ address {
 .dark-bg .title-label {
   --title-color: rgb(157, 164, 189, 0.6);
 }
+.price {
+  background-image: url(../images/img.png);
+  background-repeat: no-repeat;
+  /*background-position: center;*/
+  background-size: cover;
+}
 .price-wrap {
   display: flex;
 }
 .price-list {
   flex-basis: 50%;
   padding: 30px 40px;
+  background-image: linear-gradient(
+    180deg,
+    #090813 0%,
+    rgba(9, 11, 19, 0.2) 100%
+  );
+}
+.price-list:first-child {
+  background-image: linear-gradient(
+    180deg,
+    #171a24 0%,
+    rgba(23, 26, 36, 0.2) 100%
+  );
 }
 .price-item {
   display: flex;
   justify-content: space-between;
 }
+.price-item-serv {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+.price-item-serv:after {
+  content: '';
+  display: block;
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(157, 164, 189, 0.12);
+}
+.price-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 /* в 4 секции */
 .benefits-item {
   font-weight: 600;
@@ -276,7 +355,28 @@ address {
   line-height: 1.36;
   color: var(--accent-color);
 }
-
+/*--------------------------*/
+.contacts-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.contacts-link {
+  display: flex;
+  text-align: center;
+}
+.contacts-link .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  stroke: var(--dark-bg-text-color);
+}
+.contacts-link:hover .icon,
+.contacts-link:focus .icon {
+  stroke: var(--accent-color);
+}
+.contacts-address {
+  margin-bottom: 70px;
+}
+/*--------------------------*/
 .gallery-item {
   --grid-item: 4;
 }
