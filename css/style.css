@@ -154,6 +154,10 @@ address {
 .social-icon {
   display: inline-flex;
 }
+.social-icon .icon {
+  width: 20px;
+  height: 20px;
+}
 .social-icon-item + .social-icon-item {
   margin-left: 10px;
 }
@@ -169,11 +173,11 @@ address {
 .social-list .icon {
   width: 20px;
   height: 20px;
-  color: var(--title-color);
+  fill: var(--title-color);
 }
 .social-icon-link:hover .icon,
 .social-icon-link:focus .icon {
-  color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 /* div контейнер */
