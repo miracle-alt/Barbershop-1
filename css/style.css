@@ -253,7 +253,22 @@ address {
 .header .button {
   margin-left: 40px;
   color: #fff;
+  border-color: currentColor;
+  animation-iteration-count: infinite;
+  animation-duration: 1500ms;
+  animation-name: sos;
 }
+@keyframes sos {
+  from {
+    background-color: var(--accent-color);
+    transform: scale(1);
+  }
+  to {
+    background-color: red;
+    transform: scale(1.2);
+  }
+}
+
 .navigation {
   display: flex;
   align-items: center;
@@ -448,18 +463,25 @@ address {
   height: 100%;
   top: 0;
   left: 0;
+  z-index: 120;
+  opacity: 1;
+  transition: opacity 500ms ease-out 200ms;
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 100%;
   max-width: 450px;
   min-height: 450px;
   background-color: #fff;
   border-radius: 30px;
   padding: 40px 30px;
+  transition: transform 700ms ease-in-out 300ms;
+}
+.is-hidden .modal {
+  transform: translate(100%, 100%) scale(0.2);
 }
 .btn-close {
   position: absolute;
