@@ -245,12 +245,12 @@
 
         <div class="dark-bg">
             <div class="container flexbox">
-                <section class="section content-box" id="contact-us">
+                <section class="section content-box contact-us" id="contact-us">
                     <h2 class="title section-title">Онлайн-запись</h2>
-                    <form class="contact-us-form">
-                        <input type="text" name="user_name" placeholder="Имя*" required>
-                        <input type="tel" name="user_phone" placeholder="Телефон" required>
-                        <textarea name="user_message" id="" cols="30" rows="5" placeholder="Сообщение"></textarea>
+                    <form class="form">
+                        <input class="form-field" type="text" name="user_name" placeholder="Имя*" pattern="^[A-Za-zA-Яа-яЁё\s]+$" required>
+                        <input class="form-field" type="tel" name="user_phone" placeholder="Телефон*" pattern="[0-9]{10}" required>
+                        <textarea class="form-field form-message" name="user_message" id="" cols="30" rows="5" placeholder="Сообщение"></textarea>
                         <button class="button" type="submit">Отправить</button>
                     </form>
                 </section>
@@ -298,9 +298,31 @@
     </footer>
 
     <div class="backdrop is-hidden" data-modal>
-        <div class="modal">
+        <div class="modal dark-bg">
             <button class="btn-close" data-modal-close>x</button>
             <p class="modal-title">Свяжитесь с нами</p>
+            <form class="form">
+                <label class="form-field-label">
+                    
+                    <input class="form-field" type="text" placeholder=" " name="user_name" pattern="^[A-Za-zA-Яа-яЁё\s]+$" required>
+                    <svg class="form-field-icon">
+                        <use href="images/icons/sprite.svg#icon-map-pin"></use>
+                    </svg>
+                    <span class="form-field-text">Имя*</span>
+                </label>
+                <label class="form-field-label">
+                    
+                    <input class="form-field" type="tel" placeholder=" " name="user_phone" pattern="[0-9]{10}" required>
+                    <svg class="form-field-icon">
+                        <use href="images/icons/sprite.svg#icon-phone"></use>
+                    </svg>
+                    <span class="form-field-text">Телефон*</span>
+                </label>
+                
+                <textarea class="form-field form-message" name="user_message" id="" cols="30" rows="5"
+                    placeholder="Сообщение"></textarea>
+                <button class="button" type="submit" >Отправить</button>
+            </form>
         </div>
     </div>
 
