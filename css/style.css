@@ -494,7 +494,7 @@ address {
 .contacts {
   padding-left: 100px;
   padding-right: 100px;
-  background-image: url(./images/Bg.png);
+  background-image: url(./images/Bg.png) no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left bottom;
